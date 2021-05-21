@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Omnifood is a premium food delivery service with the mission to bring affordable and healthy meals to as many people as possible."
+    />
     <link rel="icon" type="image/png" href="./assets/img/logo.ico" />
     <link
       rel="stylesheet"
@@ -28,32 +32,38 @@
           alt="Omnifood Logo"
           class="logo-sticky"
         />
-        <ul>
-          <li>
-            <a class="link-to-food" href="javascript:void(0)">Food delivery</a>
-          </li>
-          <li>
-            <a class="link-to-how-works" href="javascript:void(0)">
-              How it works
-            </a>
-          </li>
-          <li>
-            <a class="link-to-cities" href="javascript:void(0)">Our cities</a>
-          </li>
-          <li>
-            <a class="link-to-sign-up" href="javascript:void(0)">Sign up</a>
-          </li>
-        </ul>
+        <div class="nav-list">
+          <ul>
+            <li>
+              <a class="link-to-food" href="#section-features">Food delivery</a>
+            </li>
+            <li>
+              <a class="link-to-how-works" href="#section-works">
+                How it works
+              </a>
+            </li>
+            <li>
+              <a class="link-to-cities" href="#section-cities">Our cities</a>
+            </li>
+            <li>
+              <a class="link-to-sign-up" href="#section-plans">Sign up</a>
+            </li>
+          </ul>
+          <button class="mobile-nav-btn">
+            <i class="ion-navicon-round"></i>
+            <i class="ion-close-round"></i>
+          </button>
+        </div>
       </nav>
 
       <div class="hero-text-box">
         <h1>Goodbye junk food.<br />Hello super healthy meals.</h1>
-        <a class="btn btn-full" href="javascript:void(0)">I’m hungry</a>
-        <a class="btn btn-ghost" href="javascript:void(0)">Show me more</a>
+        <a class="btn btn-full" href="#section-plans">I’m hungry</a>
+        <a class="btn btn-ghost" href="#section-features">Show me more</a>
       </div>
     </header>
 
-    <section class="section-features">
+    <section id="section-features" class="section-features">
       <div class="row">
         <h2>Get food fast &mdash; not fast food</h2>
         <p class="long-copy">
@@ -107,6 +117,7 @@
     </section>
 
     <section class="section-meals">
+      <h2 style="display: none">Meals</h2>
       <ul class="meals-showcase">
         <li>
           <figure class="meal-photo">
@@ -180,7 +191,7 @@
       </ul>
     </section>
 
-    <section class="section-steps">
+    <section id="section-steps" class="section-steps">
       <div class="row">
         <h2>How it works &mdash; Simple as 1, 2, 3</h2>
       </div>
@@ -231,7 +242,7 @@
       </div>
     </section>
 
-    <section class="section-cities">
+    <section id="section-cities" class="section-cities">
       <div class="row">
         <h2>We're currently in these cities</h2>
       </div>
@@ -351,7 +362,7 @@
       </div>
     </section>
 
-    <section class="section-plans">
+    <section id="section-plans" class="section-plans">
       <div class="row">
         <h2>Start eating healthy today</h2>
       </div>

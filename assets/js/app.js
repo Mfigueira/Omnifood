@@ -9,6 +9,7 @@ const linkToHowWorks = document.querySelector('.link-to-how-works');
 const linkToCities = document.querySelector('.link-to-cities');
 const linkToSignUp = document.querySelector('.link-to-sign-up');
 const backToTopBtn = document.querySelector('.logo-sticky');
+const mobileNavBtn = document.querySelector('.mobile-nav-btn');
 // * Sections
 const header = document.querySelector('header');
 const sectionFeatures = document.querySelector('.section-features');
@@ -21,6 +22,8 @@ const animatedFeatures = document.querySelectorAll('.section-features .box');
 const animatedMobile = document.querySelector('.animated-mobile');
 const animatedCities = document.querySelectorAll('.section-cities .box');
 const animatedPlan = document.querySelector('.animated-plan');
+// * Mobile nav
+const navUl = document.querySelector('nav ul');
 // * Sticky navigation
 const navigation = document.querySelector('nav');
 const stickyPoint = sectionFeatures.offsetTop;
@@ -93,3 +96,7 @@ linkToCities.addEventListener('click', e => scrollToSection(e, sectionCities));
 linkToSignUp.addEventListener('click', e => scrollToSection(e, sectionPlans));
 
 backToTopBtn.addEventListener('click', e => scrollToSection(e, header));
+
+mobileNavBtn.addEventListener('click', () =>
+  navUl.classList.toggle('transition-nav-in')
+);
