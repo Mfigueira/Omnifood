@@ -10,4 +10,4 @@ Includes transitions and animations.
 
 ## Can I see it?
 
-Yes! It's uploaded on GH Pages [here](https://mfigueira.github.io/Omnifood/).
+Yes! It's uploaded on GH Pages [here](https://mfigueira.github.io/omnifood/).
