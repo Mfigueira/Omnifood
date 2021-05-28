@@ -70,7 +70,7 @@ const stickHeader = entries => {
 const headerObserver = new IntersectionObserver(stickHeader, {
   root: null,
   threshold: 0,
-  rootMargin: `-${nav.getBoundingClientRect().height}px`,
+  rootMargin: `-1px`,
 });
 
 headerObserver.observe(header);
