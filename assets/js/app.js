@@ -1,11 +1,10 @@
 'use strict';
 
 // *** Elements/Selectors
-// * Buttons
-const btnBackToTop = document.querySelector('.logo-sticky');
-const btnMobileNav = document.querySelector('.mobile-nav-btn');
 // * Sections
 const header = document.querySelector('header');
+const navigation = document.querySelector('nav');
+const navUl = document.querySelector('nav ul');
 const sectionFeatures = document.querySelector('.section-features');
 const sectionHowWorks = document.querySelector('.section-steps');
 const sectionCities = document.querySelector('.section-cities');
@@ -16,10 +15,9 @@ const animatedFeatures = document.querySelectorAll('.section-features .box');
 const animatedMobile = document.querySelector('.animated-mobile');
 const animatedCities = document.querySelectorAll('.section-cities .box');
 const animatedPlan = document.querySelector('.animated-plan');
-// * Mobile nav
-const navUl = document.querySelector('nav ul');
-// * Sticky navigation
-const navigation = document.querySelector('nav');
+// * Buttons
+const btnBackToTop = document.querySelector('.logo-sticky');
+const btnMobileNav = document.querySelector('.mobile-nav-btn');
 
 // *** Animations
 const stickHeader = () => {
@@ -56,11 +54,6 @@ const animateTitle = () => {
   animatedTitle.classList.add('animate__animated', 'animate__fadeInDown');
 };
 
-const scrollToSection = (e, section) => {
-  e.preventDefault();
-  section.scrollIntoView({ behavior: 'smooth' });
-};
-
 // Animate Title On load
 animateTitle();
 
@@ -78,11 +71,15 @@ btnMobileNav.addEventListener('click', () =>
   navUl.classList.toggle('transition-nav-in')
 );
 
-btnBackToTop.addEventListener('click', e => scrollToSection(e, header));
+header.addEventListener('click', e => {
+  e.preventDefault();
+  e.target.classList.contains('nav__link') &&
+    document
+      .querySelector(e.target.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
+});
 
-header.addEventListener(
-  'click',
-  e =>
-    e.target.classList.contains('nav__link') &&
-    scrollToSection(e, document.querySelector(e.target.getAttribute('href')))
-);
+btnBackToTop.addEventListener('click', e => {
+  e.preventDefault();
+  header.scrollIntoView({ behavior: 'smooth' });
+});
