@@ -171,6 +171,17 @@ header {
   align-items: center;
 }
 
+a.back-to-top:link,
+a.back-to-top:visited,
+a.back-to-top:hover,
+a.back-to-top:active {
+  color: transparent;
+  text-decoration: none;
+  padding-bottom: 0;
+  border-bottom: 0;
+  transition: none;
+}
+
 .hero-text-box {
   padding: 20px;
   text-align: center;
@@ -229,7 +240,7 @@ nav ul li a:active {
   align-items: center;
 }
 
-.mobile-nav-btn {
+.mobile-menu-btn {
   display: none;
   cursor: pointer;
   width: 40px;
@@ -240,23 +251,23 @@ nav ul li a:active {
   margin-left: 6px;
 }
 
-.mobile-nav-btn .ion-navicon-round {
+.mobile-menu-btn .ion-navicon-round {
   display: inline-block;
 }
 
-.mobile-nav-btn .ion-close-round {
+.mobile-menu-btn .ion-close-round {
   display: none;
 }
 
-.transition-nav-in + .mobile-nav-btn .ion-navicon-round {
+.transition-nav-in + .mobile-menu-btn .ion-navicon-round {
   display: none;
 }
 
-.transition-nav-in + .mobile-nav-btn .ion-close-round {
+.transition-nav-in + .mobile-menu-btn .ion-close-round {
   display: inline-block;
 }
 
-.mobile-nav-btn i {
+.mobile-menu-btn i {
   font-size: 1.7rem;
   color: var(--color-white);
 }
@@ -341,11 +352,11 @@ nav ul li a:active {
     padding-bottom: 2px;
   }
 
-  .mobile-nav-btn {
+  .mobile-menu-btn {
     display: block;
   }
 
-  .sticky .mobile-nav-btn i {
+  .sticky .mobile-menu-btn i {
     color: inherit;
   }
 }

@@ -3,8 +3,8 @@
 // *** Elements/Selectors
 // * Sections
 const header = document.querySelector('header');
-const navigation = document.querySelector('nav');
-const navUl = document.querySelector('nav ul');
+const navigation = header.querySelector('nav');
+const navUl = navigation.querySelector('ul');
 const sectionFeatures = document.querySelector('.section-features');
 const sectionHowWorks = document.querySelector('.section-steps');
 const sectionCities = document.querySelector('.section-cities');
@@ -16,8 +16,7 @@ const animatedMobile = document.querySelector('.animated-mobile');
 const animatedCities = document.querySelectorAll('.section-cities .box');
 const animatedPlan = document.querySelector('.animated-plan');
 // * Buttons
-const btnBackToTop = document.querySelector('.logo-sticky');
-const btnMobileNav = document.querySelector('.mobile-nav-btn');
+const btnMobileMenu = document.querySelector('.mobile-menu-btn');
 
 // *** Animations
 const stickHeader = () => {
@@ -67,19 +66,15 @@ window.onscroll = () => {
   window.pageYOffset >= sectionPlans.offsetTop - 50 && animatePlan();
 };
 
-btnMobileNav.addEventListener('click', () =>
+btnMobileMenu.addEventListener('click', () =>
   navUl.classList.toggle('transition-nav-in')
 );
 
 header.addEventListener('click', e => {
   e.preventDefault();
-  e.target.classList.contains('nav__link') &&
-    document
-      .querySelector(e.target.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
-});
-
-btnBackToTop.addEventListener('click', e => {
-  e.preventDefault();
-  header.scrollIntoView({ behavior: 'smooth' });
+  const clicked = e.target.closest('.nav__link');
+  if (!clicked) return;
+  document
+    .querySelector(clicked.getAttribute('href'))
+    .scrollIntoView({ behavior: 'smooth' });
 });
