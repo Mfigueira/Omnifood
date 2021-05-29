@@ -20,35 +20,39 @@ const animatedPlan = document.querySelector('.animated-plan');
 const btnMobileMenu = document.querySelector('.mobile-menu-btn');
 
 // *** Animations
-const animations = {
-  features() {
+class Animator {
+  static features() {
     animatedFeatures.forEach((el, i) => {
       const anim = el =>
         el.classList.add('animate__animated', 'animate__fadeInUp');
       setTimeout(() => anim(el), i * 150);
     });
-  },
-  steps() {
+  }
+
+  static steps() {
     animatedMobile.classList.add('animate__animated', 'animate__fadeInLeft');
-  },
-  cities() {
+  }
+
+  static cities() {
     animatedCities.forEach((el, i) => {
       const anim = el =>
         el.classList.add('animate__animated', 'animate__fadeIn');
       setTimeout(() => anim(el), i * 200);
     });
-  },
-  plans() {
+  }
+
+  static plans() {
     animatedPlan.classList.add('animate__animated', 'animate__pulse');
-  },
-  title() {
+  }
+
+  static title() {
     animatedTitle.style.setProperty('--animate-duration', '2.5s');
     animatedTitle.classList.add('animate__animated', 'animate__fadeInDown');
-  },
-};
+  }
+}
 
 // * Animate Title On load
-animations.title();
+Animator.title();
 
 // *** Intersection Observer API for animations
 // * Sticky header
@@ -79,7 +83,7 @@ headerObserver.observe(header);
 const animateSection = (entries, observer) => {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
-  animations[entry.target.dataset.animate]();
+  Animator[entry.target.dataset.animate]();
   observer.unobserve(entry.target);
 };
 
