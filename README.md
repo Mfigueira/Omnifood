@@ -2,9 +2,9 @@
 
 ## What is this?
 
-This is a project I made to practice modern Web Design and Development principles with HTML, CSS and JS.
-
 It's the landing page of a fictional meals company.
+
+Made to practice Web Design and Development principles with HTML, CSS and JS.
 
 Includes transitions and animations.
 
